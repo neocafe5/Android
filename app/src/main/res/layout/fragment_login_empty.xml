@@ -5,7 +5,8 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/neoregister"
-    tools:context=".RegisterActivity">
+    tools:context=".login.LoginEmptyFragment"
+    android:id="@+id/login_layout">
 
     <TextView
         android:id="@+id/login_text"
@@ -13,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/top_margin_register"
         android:fontFamily="@font/roboto"
-        android:text="@string/login_text"
+        android:text="@string/textLog"
         android:textColor="@color/white"
         android:textSize="@dimen/login_size"
         android:textStyle="bold"
@@ -22,12 +23,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/name_text"
+        android:id="@+id/phoneNum_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
         android:fontFamily="@font/roboto"
-        android:text="@string/name_text"
+        android:text="@string/phoneNum_text"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -36,19 +37,19 @@
         app:layout_constraintTop_toBottomOf="@+id/login_text" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/editTextPhone"
         style="?attr/editTextStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginRight="16dp"
-        android:background="@drawable/edtext_style"
-        android:ems="10"
+        android:background="@drawable/rounded_style"
+        android:ems="13"
         android:gravity="center_horizontal|center_vertical"
-        android:hint="Name"
+        android:hint="+996 000 00 00 00"
         android:inputType="textPersonName"
-        android:maxLength="20"
+        android:maxLength="13"
         android:minHeight="48dp"
         android:textColor="@color/black"
         android:textColorHighlight="@color/gray"
@@ -57,40 +58,19 @@
         app:circularflow_defaultRadius="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_text" />
-
-    <EditText
-        android:id="@+id/editTextPhone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="45dp"
-        android:layout_marginRight="16dp"
-        android:background="@drawable/edtext_style"
-        android:ems="13"
-        android:gravity="center_horizontal|center_vertical"
-        android:hint="+996 000 00 00 00"
-        android:maxLength="13"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/gray"
-        app:circularflow_defaultRadius="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/phoneNum_text" />
 
 
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="Далее"
 
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:background="@drawable/edtext_style"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/rounded_style"
+        android:text="Далее"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />

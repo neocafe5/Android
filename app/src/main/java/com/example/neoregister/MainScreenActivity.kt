@@ -2,12 +2,8 @@ package com.example.neoregister
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.appcompat.app.ActionBar
 import androidx.fragment.app.Fragment
-import com.example.neoregister.databinding.ActivityMainBinding
 import com.example.neoregister.databinding.ActivityMainScreenBinding
-import com.example.neoregister.fragments.*
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainScreenActivity : AppCompatActivity() {
 

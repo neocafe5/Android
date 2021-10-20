@@ -1,4 +1,4 @@
-package com.example.neoregister.fragments
+package com.example.neoregister
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

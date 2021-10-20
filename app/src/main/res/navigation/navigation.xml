@@ -1,6 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/navigation">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/mainScreenFragment">
 
+    <fragment
+        android:id="@+id/registrationEmptyFragment"
+        android:name="com.example.neoregister.registration.RegistrationEmptyFragment"
+        android:label="fragment_registration_empty"
+        tools:layout="@layout/fragment_registration_empty">
+        <action
+            android:id="@+id/action_registrationEmptyFragment_to_RCodeEmptyFragment"
+            app:destination="@id/RegCodeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/RegCodeFragment"
+        android:name="com.example.neoregister.registration.RegCodeFragment"
+        android:label="fragment_reg_code"
+        tools:layout="@layout/fragment_reg_code">
+        <action
+            android:id="@+id/action_RCodeEmptyFragment_to_registrationDateFragment"
+            app:destination="@id/registrationBDateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationBDateFragment"
+        android:name="com.example.neoregister.registration.RegistrationBDateFragment"
+        android:label="fragment_registration_bdate"
+        tools:layout="@layout/fragment_registration_bdate" />
+    <fragment
+        android:id="@+id/mainScreenFragment"
+        android:name="com.example.neoregister.MainScreenFragment"
+        android:label="fragment_main_screen"
+        tools:layout="@layout/fragment_main_screen">
+        <action
+            android:id="@+id/action_mainScreenFragment_to_registrationEmptyFragment"
+            app:destination="@id/registrationEmptyFragment" />
+        <action
+            android:id="@+id/action_mainScreenFragment_to_loginEmptyFragment"
+            app:destination="@id/loginEmptyFragment"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginEmptyFragment"
+        android:name="com.example.neoregister.login.LoginEmptyFragment"
+        android:label="fragment_login_empty"
+        tools:layout="@layout/fragment_login_empty">
+        <action
+            android:id="@+id/action_loginEmptyFragment_to_logCodeFragment"
+            app:destination="@id/logCodeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/logCodeFragment"
+        android:name="com.example.neoregister.login.LogCodeFragment"
+        android:label="fragment_log_code"
+        tools:layout="@layout/fragment_log_code" />
 </navigation>

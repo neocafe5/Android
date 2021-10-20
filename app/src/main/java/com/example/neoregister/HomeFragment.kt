@@ -1,4 +1,4 @@
-package com.example.neoregister.fragments
+package com.example.neoregister
 
 import android.app.ActionBar
 import android.os.Bundle
@@ -25,7 +25,7 @@ class HomeFragment : Fragment() {
 //        }
 
     }
-
+//
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
