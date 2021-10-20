@@ -1,4 +1,4 @@
-package com.example.neoregister
+package com.example.neoregister.bottomnav
 
 import android.app.ActionBar
 import android.os.Bundle
