@@ -8,4 +8,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#616060</color>
+    <color name="clientColor">#7A68B7</color>
 </resources>

@@ -1,12 +1,14 @@
 package com.example.neoregister
 
 import android.os.Bundle
+import android.view.KeyEvent
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.FragmentTransaction
+import androidx.navigation.Navigation
 import com.example.neoregister.login.LoginEmptyFragment
 import com.example.neoregister.registration.RegistrationEmptyFragment
 
@@ -24,7 +26,12 @@ class MainScreenFragment : Fragment() {
         // Inflate the layout for this fragment
         val root = inflater.inflate(R.layout.fragment_main_screen, container, false)
 
+
         val btReg = root.findViewById<Button>(R.id.buttonReg)
+//        btReg.setOnClickListener {
+//            Navigation.findNavController(it).navigate(R.id.action_mainScreenFragment_to_loginEmptyFragment)
+//        }
+
         btReg.setOnClickListener {
             val registrationFr = RegistrationEmptyFragment()
             val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()

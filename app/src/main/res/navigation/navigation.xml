@@ -35,12 +35,14 @@
         tools:layout="@layout/fragment_main_screen">
         <action
             android:id="@+id/action_mainScreenFragment_to_registrationEmptyFragment"
-            app:destination="@id/registrationEmptyFragment" />
+            app:destination="@id/registrationEmptyFragment"
+            app:popUpTo="@id/mainScreenFragment" />
         <action
             android:id="@+id/action_mainScreenFragment_to_loginEmptyFragment"
             app:destination="@id/loginEmptyFragment"
-            app:launchSingleTop="true"
-            app:popUpToInclusive="true" />
+            app:launchSingleTop="false"
+            app:popUpTo="@id/mainScreenFragment"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/loginEmptyFragment"

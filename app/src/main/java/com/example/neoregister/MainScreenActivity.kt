@@ -3,6 +3,7 @@ package com.example.neoregister
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.example.neoregister.bottomnav.*
 import com.example.neoregister.databinding.ActivityMainScreenBinding
 
 class MainScreenActivity : AppCompatActivity() {

@@ -1,16 +1,21 @@
 package com.example.neoregister.login
 
 import android.os.Bundle
+import android.view.KeyEvent
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.core.widget.addTextChangedListener
+import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import androidx.navigation.Navigation
+import com.example.neoregister.MainScreenFragment
 import com.example.neoregister.R
 import com.example.neoregister.databinding.FragmentLoginEmptyBinding
 import com.example.neoregister.login.LogCodeFragment
+import com.example.neoregister.registration.RegistrationEmptyFragment
 
 class LoginEmptyFragment : Fragment() {
     private lateinit var fragmentBinding: FragmentLoginEmptyBinding
@@ -36,11 +41,28 @@ class LoginEmptyFragment : Fragment() {
 
         fragmentBinding.button.setOnClickListener {
             sendMessage(view)
+//            Navigation.findNavController(it).navigate(R.id.action_loginEmptyFragment_to_logCodeFragment)
+
         }
 
         return fragmentBinding.root
 
     }
+
+    override fun onResume() {
+        super.onResume()
+        requireView().setOnKeyListener { v, keyCode, event ->
+            if (event.action === KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK) {
+                // Add your code here
+                val mainFr = MainScreenFragment()
+                val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
+                transaction.replace(R.id.main_activity, mainFr).commit()
+                true
+            } else false
+        }
+    }
+
+
 
     private fun sendMessage(view: View?) {
         val editText = fragmentBinding.editTextPhone

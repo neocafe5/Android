@@ -49,87 +49,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sms_text" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <in.aabhasjindal.otptextview.OtpTextView
+        android:id="@+id/otp_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="14dp"
-        android:gravity="center"
-        android:orientation="horizontal"
+        android:textColor="#ffffff"
+        app:bar_active_color="@color/clientColor"
+        app:bar_enabled="true"
+        app:bar_height="2dp"
+        app:height="40dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sms_enter_text"
-        tools:ignore="MissingConstraints">
-
-        <EditText
-            android:id="@+id/codeOne"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="10dp"
-            android:background="@drawable/otp_item_bg"
-            android:cursorVisible="false"
-            android:enabled="true"
-            android:gravity="center"
-            android:inputType="numberDecimal"
-            android:maxLength="1"
-            android:maxLines="1"
-            android:textColor="@color/gray"
-            android:textCursorDrawable="@null"
-            android:textSize="15pt"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/codeTwo"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="10dp"
-            android:background="@drawable/otp_item_bg"
-            android:cursorVisible="false"
-            android:enabled="false"
-            android:gravity="center"
-            android:inputType="numberDecimal"
-            android:maxLength="1"
-            android:maxLines="1"
-            android:textColor="@color/gray"
-            android:textCursorDrawable="@null"
-            android:textSize="15pt"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/codeThree"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="10dp"
-            android:background="@drawable/otp_item_bg"
-            android:cursorVisible="false"
-            android:enabled="false"
-            android:gravity="center"
-            android:inputType="numberDecimal"
-            android:maxLength="1"
-            android:maxLines="1"
-            android:textColor="@color/gray"
-            android:textCursorDrawable="@null"
-            android:textSize="15pt"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/codeFour"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="10dp"
-            android:background="@drawable/otp_item_bg"
-            android:cursorVisible="false"
-            android:enabled="false"
-            android:gravity="center"
-            android:inputType="numberDecimal"
-            android:maxLength="1"
-            android:maxLines="1"
-            android:textColor="@color/gray"
-            android:textCursorDrawable="@null"
-            android:textSize="15pt"
-            android:textStyle="bold" />
-
-    </LinearLayout>
+        app:length="4"
+        app:otp_text_size="24dp"
+        app:width="40dp" />
 
     <Button
         android:id="@+id/confirm_button"
@@ -143,7 +79,7 @@
         android:text="Подтвердить"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/otp_view" />
 
     <TextView
         android:id="@+id/resend_text"
