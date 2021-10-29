@@ -10,6 +10,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NeoRegister">
         <activity
+            android:name=".registration.RegistrationBDateActivity"
+            android:exported="true" />
+        <activity
+            android:name=".registration.RegCodeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".registration.RegistrationEmptyActivity"
+            android:exported="true" />
+        <activity
+            android:name=".login.LogCodeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".login.LoginEmptyActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ChooseActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainScreenActivity"
             android:exported="true" />
         <activity
