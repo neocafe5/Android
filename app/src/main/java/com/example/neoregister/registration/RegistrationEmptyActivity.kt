@@ -22,7 +22,7 @@ class RegistrationEmptyActivity : AppCompatActivity() {
 
         binding.button.isEnabled=false
         binding.editTextPhone.addTextChangedListener {
-            if(it.toString().length!!<13){
+            if(it.toString().length!!<9){
                 binding.button.isEnabled=false
                 markButtonDisable(binding.button)
             }else{
