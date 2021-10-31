@@ -19,6 +19,10 @@ class LogCodeActivity : AppCompatActivity() {
 
         actionBar?.hide()
 
+//        binding.confirmButton.isEnabled=false
+//        binding.resendButton.isEnabled=false
+
+
         binding.confirmButton.setOnClickListener {
             val intent = Intent(this, MainScreenActivity::class.java)
             startActivity(intent)
