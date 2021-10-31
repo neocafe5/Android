@@ -44,7 +44,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <include
-            android:id="@+id/container_header_lyt"
+            android:id="@+id/container_popular"
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
             layout="@layout/card_item"/>
@@ -70,6 +70,13 @@
             android:textSize="28sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/popular_items_rec_view" />
+
+        <include
+            android:id="@+id/container_menu"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            app:layout_constraintTop_toBottomOf="@id/menu_title"
+            layout="@layout/menu_item"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/category_item_rec_view"
