@@ -10,6 +10,8 @@
         <entry key="app/src/main/res/drawable/edtext_style.xml" value="0.209375" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.18333333333333332" />
         <entry key="app/src/main/res/drawable/opt_item_bg.xml" value="0.20462962962962963" />
+        <entry key="app/src/main/res/drawable/rounded_style.xml" value="0.20092592592592592" />
+        <entry key="app/src/main/res/drawable/rounded_top.xml" value="0.20092592592592592" />
         <entry key="app/src/main/res/font/fonts.xml" value="0.21666666666666667" />
         <entry key="app/src/main/res/layout/activity_auth.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/activity_choose.xml" value="0.19322916666666667" />
