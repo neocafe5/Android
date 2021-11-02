@@ -22,10 +22,13 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
+            android:padding="16dp"
+            android:text="Популярное"
+            android:textColor="@color/black"
+            android:textSize="24dp"
+            android:textStyle="bold"
             android:fontFamily="@font/roboto"
             android:gravity="top"
-            android:textColor="#5D5A65"
-            android:textSize="28sp"
             app:layout_constraintBaseline_toBaselineOf="@+id/all_popular_tv"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -38,22 +41,19 @@
             android:layout_marginRight="22dp"
             android:fontFamily="@font/roboto"
             android:gravity="top"
-            android:textColor="#515151"
-            android:textSize="16sp"
+            android:padding="16dp"
+            android:text="Все"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <include
-            android:id="@+id/container_popular"
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
-            layout="@layout/card_item"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/popular_items_rec_view"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:layout_marginTop="24dp"
+            android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/popular_tv" />
 

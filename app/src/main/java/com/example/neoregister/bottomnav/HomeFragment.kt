@@ -6,44 +6,39 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.neoregister.R
-
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+import com.example.neoregister.adapters.PopularAdapter
+import com.example.neoregister.databinding.FragmentHomeBinding
+import com.example.neoregister.models.PopularCard
+import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
-//    private var param1: String? = null
-//    private var param2: String? = null
 
-    private lateinit var actionBar: ActionBar;
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-//        arguments?.let {
-//            param1 = it.getString(ARG_PARAM1)
-//            param2 = it.getString(ARG_PARAM2)
-//        }
-
-    }
-//
+    private lateinit var binding :FragmentHomeBinding
+    private lateinit var popAdater : PopularAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
-    }
+        binding = FragmentHomeBinding.inflate(layoutInflater)
+
+        val popItems = mutableListOf<PopularCard>(
+            PopularCard(1,"https://content.r9cdn.net/rimg/himg/51/74/1b/ostrovok-6965648-9bb831e1091d70ff2e60166a0db6b2880c095090-899355.jpg?width=335&height=268&crop=true", "Snack", "90s"),
+            PopularCard(2,"https://content.r9cdn.net/rimg/himg/51/74/1b/ostrovok-6965648-9bb831e1091d70ff2e60166a0db6b2880c095090-899355.jpg?width=335&height=268&crop=true", "Snack", "90s"),
+            PopularCard(3,"https://content.r9cdn.net/rimg/himg/51/74/1b/ostrovok-6965648-9bb831e1091d70ff2e60166a0db6b2880c095090-899355.jpg?width=335&height=268&crop=true", "Snack", "90s")
+        )
+
+        popAdater = PopularAdapter(popItems)
 
 
-    companion object {
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            HomeFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+//        val layoutManager = LinearLayoutManager(view?.context)
+//        binding.popularItemsRecView.layoutManager = layoutManager
+        binding.popularItemsRecView.setLayoutManager(LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false))
+
+        binding.popularItemsRecView.adapter = popAdater
+
+        return binding.root
     }
 }
