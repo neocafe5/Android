@@ -20,12 +20,12 @@ class PopularAdapter(private val cardspopular : List<PopularCard>) : RecyclerVie
         val card = cardspopular[position]
         with(holder.binding){
             holder.itemView.tag=card
-            cardId.tag = card.id
-            popularTxt.tag = card.name
-            popularPrice.tag = card.price
+            cardId.tag = card
+            popularTxt.text = card.name
+            popularPrice.text = card.price
 
             if (card.img.isNotBlank()){
-                Glide.with(popularImg .context)
+                Glide.with(popularImg.context)
                     .load(card.img)
                     .placeholder(R.drawable.snack)
                     .error(R.drawable.snack)

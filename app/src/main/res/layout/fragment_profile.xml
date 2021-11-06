@@ -1,22 +1,273 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".bottomnav.ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:text="Profile"
-        android:textSize="32dp"
-        android:textColor="@color/purple_500"/>
 
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/profitSaveBLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/datatxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="top|start"
+                    android:text="Фамилия" />
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/lastnameInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/datatxt"
+                    app:boxBackgroundColor="#fff"
+                    app:boxStrokeColor="#993B3D4F"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/last_name_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Введите фамилию"
+                        android:paddingStart="8dp"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:fontFamily="@font/roboto"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/datatxt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="top|start"
+                    android:text="Имя" />
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/lasnameInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/datatxt2"
+                    app:boxBackgroundColor="#fff"
+                    app:boxStrokeColor="#993B3D4F"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/name_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Введите имя"
+                        android:paddingStart="8dp"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:fontFamily="@font/roboto"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/patronymictxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="top|start"
+                    android:text="Отчество" />
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/patronymictxtInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/patronymictxt"
+                    app:boxBackgroundColor="#fff"
+                    app:boxStrokeColor="#993B3D4F"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/patronymi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Введите отчетсво"
+                        android:paddingStart="8dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:fontFamily="@font/roboto"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/emailTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="top|start"
+                    android:text="Почта" />
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/emailInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/emailTxt"
+                    app:boxBackgroundColor="#fff"
+                    app:boxStrokeColor="#993B3D4F"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Введите почту"
+                        android:paddingStart="8dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:fontFamily="@font/roboto"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/passwordTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="top|start"
+                    android:text="Новый пароль" />
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/passwordInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/passwordTxt"
+                    app:boxBackgroundColor="#fff"
+                    app:boxStrokeColor="#993B3D4F"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Введите пароль"
+                        android:paddingStart="8dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:fontFamily="@font/roboto"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+    <RelativeLayout
+        android:id="@+id/profitSaveBLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/deleteUser"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/clientColor"
+            android:gravity="bottom|start"
+            android:src="@drawable/ic_star"
+            android:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/saveNewUserData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="16dp"
+            android:layout_toEndOf="@+id/deleteUser"
+            android:background="@color/clientColor"
+            android:fontFamily="@font/roboto"
+            android:text="Сохранить"
+            android:textColor="#ffffff"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

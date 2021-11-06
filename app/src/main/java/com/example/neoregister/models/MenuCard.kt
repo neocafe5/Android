@@ -1,4 +1,7 @@
 package com.example.neoregister.models
 
-class MenuCard {
-}
+data class MenuCard(
+    val id : Long,
+    val img : String,
+    val name : String
+)

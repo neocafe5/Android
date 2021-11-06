@@ -3,59 +3,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/mainScreenFragment">
+    app:startDestination="@id/homeFragment">
+
 
     <fragment
-        android:id="@+id/registrationEmptyFragment"
-        android:name="com.example.neoregister.registration.RegistrationEmptyFragment"
-        android:label="fragment_registration_empty"
-        tools:layout="@layout/fragment_registration_empty">
+        android:id="@+id/homeFragment"
+        android:name="com.example.neoregister.bottomnav.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_registrationEmptyFragment_to_RCodeEmptyFragment"
-            app:destination="@id/RegCodeFragment" />
+            android:id="@+id/action_homeFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
     </fragment>
     <fragment
-        android:id="@+id/RegCodeFragment"
-        android:name="com.example.neoregister.registration.RegCodeFragment"
-        android:label="fragment_reg_code"
-        tools:layout="@layout/fragment_reg_code">
-        <action
-            android:id="@+id/action_RCodeEmptyFragment_to_registrationDateFragment"
-            app:destination="@id/registrationBDateFragment" />
-    </fragment>
+        android:id="@+id/cartFragment"
+        android:name="com.example.neoregister.bottomnav.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" />
     <fragment
-        android:id="@+id/registrationBDateFragment"
-        android:name="com.example.neoregister.registration.RegistrationBDateFragment"
-        android:label="fragment_registration_bdate"
-        tools:layout="@layout/fragment_registration_bdate" />
+        android:id="@+id/QRFragment"
+        android:name="com.example.neoregister.bottomnav.QRFragment"
+        android:label="QRFragment" />
     <fragment
-        android:id="@+id/mainScreenFragment"
-        android:name="com.example.neoregister.MainScreenFragment"
-        android:label="fragment_main_screen"
-        tools:layout="@layout/fragment_main_screen">
-        <action
-            android:id="@+id/action_mainScreenFragment_to_registrationEmptyFragment"
-            app:destination="@id/registrationEmptyFragment"
-            app:popUpTo="@id/mainScreenFragment" />
-        <action
-            android:id="@+id/action_mainScreenFragment_to_loginEmptyFragment"
-            app:destination="@id/loginEmptyFragment"
-            app:launchSingleTop="false"
-            app:popUpTo="@id/mainScreenFragment"
-            app:popUpToInclusive="false" />
-    </fragment>
+        android:id="@+id/branchesFragment"
+        android:name="com.example.neoregister.bottomnav.BranchesFragment"
+        android:label="fragment_branches"
+        tools:layout="@layout/fragment_branches" />
     <fragment
-        android:id="@+id/loginEmptyFragment"
-        android:name="com.example.neoregister.login.LoginEmptyFragment"
-        android:label="fragment_login_empty"
-        tools:layout="@layout/fragment_login_empty">
-        <action
-            android:id="@+id/action_loginEmptyFragment_to_logCodeFragment"
-            app:destination="@id/logCodeFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/logCodeFragment"
-        android:name="com.example.neoregister.login.LogCodeFragment"
-        android:label="fragment_log_code"
-        tools:layout="@layout/fragment_log_code" />
+        android:id="@+id/profileFragment"
+        android:name="com.example.neoregister.bottomnav.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>

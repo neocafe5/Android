@@ -33,12 +33,15 @@
         <entry key="app/src/main/res/layout/fragment_log_code.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/fragment_login_empty.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_main_screen.xml" value="0.19322916666666667" />
-        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.18055555555555555" />
+        <entry key="app/src/main/res/layout/fragment_menu_ch.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/fragment_popular_ch.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_q_r.xml" value="0.18055555555555555" />
         <entry key="app/src/main/res/layout/fragment_reg_code.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/fragment_registration_bdate.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/fragment_registration_empty.xml" value="0.19322916666666667" />
-        <entry key="app/src/main/res/layout/menu_item.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/fragment_scanner.xml" value="0.178125" />
+        <entry key="app/src/main/res/layout/menu_item.xml" value="0.2" />
         <entry key="app/src/main/res/layout/popular_item.xml" value="0.19025641025641027" />
         <entry key="app/src/main/res/menu/menu.xml" value="0.18055555555555555" />
       </map>

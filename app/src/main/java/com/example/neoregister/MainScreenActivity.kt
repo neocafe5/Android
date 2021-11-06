@@ -14,6 +14,7 @@ class MainScreenActivity : AppCompatActivity() {
     private val homeFragment = HomeFragment()
     private val cartFragment = CartFragment()
     private val qrFragment = QRFragment()
+    private val scannerFragment = ScannerFragment()
     private val branchesFragment = BranchesFragment()
     private val profileFragment = ProfileFragment()
 
@@ -29,7 +30,7 @@ class MainScreenActivity : AppCompatActivity() {
             when(it.itemId){
                 R.id.ic_home -> replaceFragment(homeFragment)
                 R.id.ic_cart -> replaceFragment(cartFragment)
-                R.id.ic_qr -> replaceFragment(qrFragment)
+                R.id.ic_qr -> replaceFragment(scannerFragment)
                 R.id.ic_location -> replaceFragment(branchesFragment)
                 R.id.ic_profile -> replaceFragment(profileFragment)
             }
