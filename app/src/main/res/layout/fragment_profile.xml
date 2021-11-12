@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,13 +10,17 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/profitSaveBLayout"
+        android:background="@color/clientColor"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/rounded_top">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,44 +32,117 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="12dp"
+                android:fontFamily="@font/roboto"
+                android:gravity="center_horizontal"
+                android:text="Айдай"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginRight="@dimen/dp_16"
+                android:background="@drawable/rounded_style"
+                android:backgroundTint="@color/clientColor">
+
+                <TextView
+                    android:id="@+id/collectTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="18dp"
+                    android:textSize="@dimen/sp_18"
+                    android:text="Вы накопили"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/bonus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/collectTxt">
+
+                    <TextView
+                        android:id="@+id/bonusNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:text="800"
+                        android:textSize="36sp" />
+
+                    <TextView
+                        android:id="@+id/bonusTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:textSize="@dimen/sp_18"
+                        android:text="бонусов" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/samplepic"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="8dp">
 
                 <TextView
                     android:id="@+id/datatxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="16dp"
+                    android:paddingLeft="30dp"
                     android:text="Имя" />
 
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/lastnameInputLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/datatxt"
                     app:boxBackgroundColor="#fff"
                     app:boxStrokeColor="#993B3D4F"
-                    app:hintEnabled="false"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                    app:hintEnabled="false">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/last_name_et"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Aidai"
-                        android:paddingStart="16dp"
-                        android:paddingRight="16dp"
+                        android:layout_marginLeft="@dimen/dp_16"
+                        android:layout_marginRight="@dimen/dp_16"
+                        android:fontFamily="@font/roboto"
                         android:imeOptions="actionNext"
                         android:inputType="text"
+                        android:minHeight="@dimen/editText_42"
+                        android:paddingStart="15dp"
                         android:paddingTop="8dp"
+                        android:paddingRight="15dp"
                         android:paddingBottom="8dp"
-                        android:fontFamily="@font/roboto"
+                        android:text="Aidai"
                         android:textSize="16sp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -75,39 +152,42 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="8dp">
 
                 <TextView
                     android:id="@+id/datatxt2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="16dp"
+                    android:paddingLeft="30dp"
                     android:text="Номер тел" />
 
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/lasnameInputLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/datatxt2"
                     app:boxBackgroundColor="#fff"
                     app:boxStrokeColor="#993B3D4F"
-                    app:hintEnabled="false"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                    app:hintEnabled="false">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/name_et"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="+996705464228"
-                        android:paddingStart="16dp"
-                        android:paddingRight="16dp"
+                        android:layout_marginLeft="@dimen/dp_16"
+                        android:layout_marginRight="@dimen/dp_16"
+                        android:fontFamily="@font/roboto"
                         android:imeOptions="actionNext"
                         android:inputType="text"
+                        android:minHeight="@dimen/editText_42"
+                        android:paddingStart="16dp"
                         android:paddingTop="8dp"
+                        android:paddingRight="16dp"
                         android:paddingBottom="8dp"
-                        android:fontFamily="@font/roboto"
+                        android:text="+996705464228"
                         android:textSize="16sp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -118,84 +198,104 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="8dp">
 
                 <TextView
-                    android:id="@+id/patronymictxt"
+                    android:id="@+id/bdateTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="16dp"
+                    android:paddingLeft="30dp"
                     android:text="Дата рождения" />
 
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/patronymictxtInputLayout"
+                    android:id="@+id/bdateInput"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/patronymictxt"
+                    android:layout_below="@id/bdateTxt"
                     app:boxBackgroundColor="#fff"
                     app:boxStrokeColor="#993B3D4F"
-                    app:hintEnabled="false"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                    app:hintEnabled="false">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/patronymi"
+                        android:id="@+id/bdateEdTxt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_16"
+                        android:layout_marginRight="@dimen/dp_16"
+                        android:editable="false"
+                        android:fontFamily="@font/roboto"
                         android:hint="23.06.2001"
-                        android:paddingStart="16dp"
-                        android:paddingRight="16dp"
-                        android:paddingTop="8dp"
-                        android:paddingBottom="8dp"
                         android:imeOptions="actionNext"
                         android:inputType="text"
-                        android:fontFamily="@font/roboto"
-                        android:textSize="16sp"
-                        android:editable="false"/>
+                        android:minHeight="@dimen/editText_42"
+                        android:paddingStart="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="8dp"
+                        android:textSize="16sp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
             </RelativeLayout>
 
+            <Button
+                android:id="@+id/historyButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left|center_vertical"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/rounded_style"
+                android:text="История заказов"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:drawableRight="@drawable/ic_history"
+                app:layout_constraintTop_toBottomOf="@+id/bdateEdTxt"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:background="@drawable/rounded_style"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginRight="@dimen/dp_16"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/sp_18"
+                    android:textColor="@color/black"
+                    android:text="Получать новости от \nneocafe ?"/>
+
+                <ImageView
+                    android:layout_width="34dp"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerCrop"
+                    android:layout_marginLeft="70dp"
+                    android:src="@drawable/ic_toggle_off" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/exitButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left|center_vertical"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/rounded_style"
+                android:text="Выйти"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:drawableRight="@drawable/ic_exit"
+                app:layout_constraintTop_toBottomOf="@+id/historyButton" />
         </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
-
-    <RelativeLayout
-        android:id="@+id/profitSaveBLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ImageButton
-            android:id="@+id/deleteUser"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_alignParentStart="true"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="16dp"
-            android:background="@color/clientColor"
-            android:gravity="bottom|start"
-            android:src="@drawable/ic_star"
-            android:visibility="visible" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/saveNewUserData"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginBottom="16dp"
-            android:layout_toEndOf="@+id/deleteUser"
-            android:background="@color/clientColor"
-            android:fontFamily="@font/roboto"
-            android:text="Сохранить"
-            android:textColor="#ffffff"
-            android:textSize="16sp" />
-
-    </RelativeLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

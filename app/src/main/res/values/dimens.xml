@@ -2,4 +2,8 @@
 <resources>
     <dimen name="top_margin_register">156sp</dimen>
     <dimen name="login_size">38sp</dimen>
+    <dimen name="paragraph_size">24sp</dimen>
+    <dimen name="dp_16">16dp</dimen>
+    <dimen name="editText_42">42dp</dimen>
+    <dimen name="sp_18">18sp</dimen>
 </resources>
