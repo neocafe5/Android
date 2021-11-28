@@ -10,10 +10,19 @@ import com.example.neoregister.databinding.MenuItemBinding
 import com.example.neoregister.models.MenuCard
 
 class MenuAdapter(private val cardsmenu : List<MenuCard>): RecyclerView.Adapter<MenuAdapter.MenuCardViewHolder>() {
+
+    var onItemClickListener: ((MenuCard) -> Unit)? = null
+    inner class MenuCardViewHolder(val binding : MenuItemBinding): RecyclerView.ViewHolder(binding.root){
+        init {
+            itemView.setOnClickListener{
+                onItemClickListener?.invoke(cardsmenu[adapterPosition])
+            }
+        }
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuCardViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding =MenuItemBinding.inflate(inflater, parent, false)
-
         return MenuCardViewHolder(binding)
     }
 
@@ -24,7 +33,7 @@ class MenuAdapter(private val cardsmenu : List<MenuCard>): RecyclerView.Adapter<
             cardId.tag = card
             menuTxt.text = card.name
 
-            if(card.img.isNotBlank()){
+            if(card.img != null){
                 Glide.with(menuImg.context)
                     .load(card.img)
                     .placeholder(R.drawable.coffee)
@@ -39,7 +48,4 @@ class MenuAdapter(private val cardsmenu : List<MenuCard>): RecyclerView.Adapter<
 
     override fun getItemCount(): Int = cardsmenu.size
 
-    class MenuCardViewHolder(
-        val binding : MenuItemBinding
-    ): RecyclerView.ViewHolder(binding.root)
 }

@@ -34,14 +34,16 @@ class HomeFragment : Fragment() {
 
         val popItems = mutableListOf<PopularCard>(
             PopularCard(1,"https://content.r9cdn.net/rimg/himg/51/74/1b/ostrovok-6965648-9bb831e1091d70ff2e60166a0db6b2880c095090-899355.jpg?width=335&height=268&crop=true", "Пончики", "90s"),
-            PopularCard(2,"https://content.r9cdn.net/rimg/himg/51/74/1b/ostrovok-6965648-9bb831e1091d70ff2e60166a0db6b2880c095090-899355.jpg?width=335&height=268&crop=true", "Чесночный багет с базиликом ", "90s"),
+            PopularCard(2,"https://content.r9cdn.net/rimg/himg/51/74/1b/ostrovok-6965648-9bb831e1091d70ff2e60166a0db6b2880c095090-899355.jpg?width=335&height=268&crop=true", "Чесночный багет с базиликом", "90s"),
             PopularCard(3,"@drawable/peachsok.png", "Апельсиновый сок", "90s")
         )
 
         val menuItems = mutableListOf<MenuCard>(
-            MenuCard(1, "https://content.r9cdn.net/rimg/himg/51/74/1b/ostrovok-6965648-9bb831e1091d70ff2e60166a0db6b2880c095090-899355.jpg?width=335&height=268&crop=true", "Кофе"),
-            MenuCard(2, "https://content.r9cdn.net/rimg/himg/51/74/1b/ostrovok-6965648-9bb831e1091d70ff2e60166a0db6b2880c095090-899355.jpg?width=335&height=268&crop=true", "Чай"),
-            MenuCard(3, "https://content.r9cdn.net/rimg/himg/51/74/1b/ostrovok-6965648-9bb831e1091d70ff2e60166a0db6b2880c095090-899355.jpg?width=335&height=268&crop=true", "Чай")
+            MenuCard(1, R.drawable.coffee, "Кофе"),
+            MenuCard(2, R.drawable.tea, "Чай"),
+            MenuCard(3, R.drawable.beverage, "Напитки"),
+            MenuCard(3, R.drawable.dessert, "Десерты"),
+            MenuCard(3, R.drawable.bakery, "Выпечка")
         )
 
         popAdater = PopularAdapter(popItems)

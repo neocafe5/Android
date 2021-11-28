@@ -5,18 +5,23 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.neoregister.R
 import com.example.neoregister.adapters.MenuAdapter
+import com.example.neoregister.adapters.MenuCategoryAdapter
 import com.example.neoregister.databinding.FragmentHomeBinding
 import com.example.neoregister.databinding.FragmentMenuChBinding
 import com.example.neoregister.models.MenuCard
+import com.example.neoregister.viewmodel.MainViewModel
 
 class MenuChFragment : Fragment() {
 
-    private lateinit var binding: FragmentMenuChBinding
-    private lateinit var menuAdapter: MenuAdapter
-
+    private val menuAdapter by lazy {MenuCategoryAdapter()}
+    private val mainViewModel by lazy { ViewModelProvider(this).get(MainViewModel::class.java) }
+    private var _binding:FragmentMenuChBinding? = null
+    private val binding
+        get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,22 +29,25 @@ class MenuChFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         activity?.title = "Меню"
-        binding = FragmentMenuChBinding.inflate(layoutInflater)
+        _binding = FragmentMenuChBinding.inflate(layoutInflater)
 
-        val menuItems = mutableListOf<MenuCard>(
-            MenuCard(1, "https://content.r9cdn.net/rimg/himg/51/74/1b/ostrovok-6965648-9bb831e1091d70ff2e60166a0db6b2880c095090-899355.jpg?width=335&height=268&crop=true", "Кофе"),
-            MenuCard(2, "https://content.r9cdn.net/rimg/himg/51/74/1b/ostrovok-6965648-9bb831e1091d70ff2e60166a0db6b2880c095090-899355.jpg?width=335&height=268&crop=true", "Чай"),
-            MenuCard(2, "https://content.r9cdn.net/rimg/himg/51/74/1b/ostrovok-6965648-9bb831e1091d70ff2e60166a0db6b2880c095090-899355.jpg?width=335&height=268&crop=true", "Чай")
-        )
+        mainViewModel.getAllData()
 
-        menuAdapter = MenuAdapter(menuItems)
-        binding.categoryItemRecView.layoutManager =
-            GridLayoutManager(requireContext(), 2)
+        _binding!!.categoryItemRecView.apply {
+            adapter=menuAdapter
+            layoutManager = GridLayoutManager(requireContext(), 2)
+        }
 
-
-        binding.categoryItemRecView.adapter = menuAdapter
+        mainViewModel.list.observe(viewLifecycleOwner){
+            menuAdapter.setList(it.data)
+        }
 
         return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

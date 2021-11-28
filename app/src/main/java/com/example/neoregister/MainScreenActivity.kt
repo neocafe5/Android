@@ -40,10 +40,10 @@ class MainScreenActivity : AppCompatActivity() {
     }
 
     private fun replaceFragment(fragment: Fragment){
-        if(fragment !=null){
-            val transaction = supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.fragment_container, fragment)
-            transaction.commit()
-        }
+            if(fragment !=null){
+                val transaction = supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.fragment_container, fragment)
+                transaction.commit()
+            }
     }
 }
