@@ -1,5 +1,5 @@
 # NeoCafe 
-<img src="https://user-images.githubusercontent.com/89988823/147777839-514baca2-6dd5-428a-85fc-de5f29647ca4.jpg" width="500" height="250">
+<img src="https://user-images.githubusercontent.com/89988823/147777839-514baca2-6dd5-428a-85fc-de5f29647ca4.jpg" width="500" height="210">
 
 ### This Application for clients in cafe
 [Code of the project](https://github.com/neocafe5/Android/tree/chip-groups) in GitHub
