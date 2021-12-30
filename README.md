@@ -1,3 +1,2 @@
-## Project Name:
-# NeoCafe 
-## Application for clients in cafe
+## Project Name: # NeoCafe 
+### Application for clients in cafe
