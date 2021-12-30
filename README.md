@@ -6,6 +6,9 @@
 
 [Open](https://schedulecs.herokuapp.com/) the site on Heroku
 
+<img src="https://user-images.githubusercontent.com/89988823/147777860-a6cc86e8-b66e-4417-a6f5-681bddbe4434.jpg" width="60" height="100">  <img src="https://user-images.githubusercontent.com/89988823/147777938-9d3fa161-0027-47ff-be80-41d4c1162ddd.jpg" width="60" height="100">
+
+ 
 ![photo5364332806479657302](https://user-images.githubusercontent.com/89988823/147777860-a6cc86e8-b66e-4417-a6f5-681bddbe4434.jpg)
 ![photo5364332806479657301](https://user-images.githubusercontent.com/89988823/147777938-9d3fa161-0027-47ff-be80-41d4c1162ddd.jpg)
 ![photo5364332806479657300](https://user-images.githubusercontent.com/89988823/147777942-6fee32e7-7667-4e06-a211-c594b127bf6c.jpg)
