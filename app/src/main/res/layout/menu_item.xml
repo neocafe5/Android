@@ -24,8 +24,8 @@
             <ImageView
                 android:id="@+id/menuImg"
                 android:layout_width="150dp"
-                android:layout_height="180dp"
-                android:scaleType="centerCrop"
+                android:layout_height="150dp"
+                android:layout_gravity="center_horizontal|center_vertical"
                 android:src="@drawable/coffee"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

@@ -25,9 +25,9 @@ class BranchesFragment : Fragment() {
         binding = FragmentBranchesBinding.inflate(layoutInflater)
 
         val branchItems = mutableListOf<BranchCard>(
-            BranchCard(1, "https://content.r9cdn.net/rimg/himg/51/74/1b/ostrovok-6965648-9bb831e1091d70ff2e60166a0db6b2880c095090-899355.jpg?width=335&height=268&crop=true", "Абдырахманова 36","09:00-22:00"),
-            BranchCard(1, "https://content.r9cdn.net/rimg/himg/51/74/1b/ostrovok-6965648-9bb831e1091d70ff2e60166a0db6b2880c095090-899355.jpg?width=335&height=268&crop=true", "Абдырахманова 36","09:00-22:00"),
-            BranchCard(1, "https://content.r9cdn.net/rimg/himg/51/74/1b/ostrovok-6965648-9bb831e1091d70ff2e60166a0db6b2880c095090-899355.jpg?width=335&height=268&crop=true", "Абдырахманова 36","09:00-22:00")
+            BranchCard(1, "https://media-cdn.tripadvisor.com/media/photo-s/16/10/98/71/photo0jpg.jpg", "Абдырахманова 36","09:00-22:00"),
+            BranchCard(1, "https://media.timeout.com/images/105573652/image.jpg", "Абдырахманова 36","09:00-22:00"),
+            BranchCard(1, "https://cdn.archilovers.com/projects/c_383_b7f357f3-4d5e-45e7-81d0-a49409edca05.jpg", "Абдырахманова 36","09:00-22:00")
         )
 
         branchAdapter = BranchAdapter(branchItems)

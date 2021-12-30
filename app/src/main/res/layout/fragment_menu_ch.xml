@@ -16,7 +16,7 @@
         <HorizontalScrollView
             android:id="@+id/chipGroup"
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:background="@drawable/rounded_top"
             android:scrollbars="none"
@@ -27,9 +27,10 @@
 
             <com.google.android.material.chip.ChipGroup
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 app:checkedChip="@+id/all"
-                app:singleLine="false"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                app:singleLine="true"
                 app:singleSelection="true">
 
                 <com.google.android.material.chip.Chip
@@ -37,49 +38,43 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Чай"
-                    app:chipMinTouchTargetSize="0dp" />
+                    style="@style/Widget.MaterialComponents.Chip.Filter" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/coffee_chip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Кофе"
-                    app:chipMinTouchTargetSize="0dp" />
+                    style="@style/Widget.MaterialComponents.Chip.Filter" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/drinks_chip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Напитки"
-                    app:chipMinTouchTargetSize="0dp" />
+                    style="@style/Widget.MaterialComponents.Chip.Filter" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/snack_chip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Выпечка"
-                    app:chipMinTouchTargetSize="0dp" />
+                    style="@style/Widget.MaterialComponents.Chip.Filter" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/desert_chip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Десерты"
-                    app:chipMinTouchTargetSize="0dp" />
+                    style="@style/Widget.MaterialComponents.Chip.Filter" />
 
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/desert"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Десерты"
-                    app:chipMinTouchTargetSize="0dp" />
             </com.google.android.material.chip.ChipGroup>
         </HorizontalScrollView>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/category_item_rec_view"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height=  "0dp"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="20dp"
             app:layout_constraintBottom_toBottomOf="parent"

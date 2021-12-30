@@ -6,9 +6,18 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.neoregister.R
 import com.example.neoregister.databinding.PopularItemBinding
+import com.example.neoregister.models.MenuCategoryCard
 import com.example.neoregister.models.PopularCard
 
-class PopularAdapter(private val cardspopular : List<PopularCard>) : RecyclerView.Adapter<PopularAdapter.PopCardViewHolder>() {
+class PopularAdapter: RecyclerView.Adapter<PopularAdapter.PopCardViewHolder>() {
+
+    private var list = listOf<MenuCategoryCard>()
+
+    fun setList(list:List<MenuCategoryCard>){
+        this.list = list
+        notifyDataSetChanged()
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PopCardViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = PopularItemBinding.inflate(inflater, parent,false)
@@ -17,16 +26,16 @@ class PopularAdapter(private val cardspopular : List<PopularCard>) : RecyclerVie
     }
 
     override fun onBindViewHolder(holder: PopCardViewHolder, position: Int) {
-        val card = cardspopular[position]
+        val card = list[position]
         with(holder.binding){
             holder.itemView.tag=card
             cardId.tag = card
             popularTxt.text = card.name
             popularPrice.text = card.price
 
-            if (card.img.isNotBlank()){
+            if (card.image != null){
                 Glide.with(popularImg.context)
-                    .load(card.img)
+                    .load(card.image)
                     .placeholder(R.drawable.snack)
                     .error(R.drawable.snack)
                     .into(popularImg)
@@ -37,7 +46,9 @@ class PopularAdapter(private val cardspopular : List<PopularCard>) : RecyclerVie
         }
     }
 
-    override fun getItemCount(): Int = cardspopular.size
+    override fun getItemCount(): Int {
+        return list.size
+    }
 
     class PopCardViewHolder(
         val binding: PopularItemBinding

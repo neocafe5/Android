@@ -7,21 +7,28 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.neoregister.R
 import com.example.neoregister.adapters.MenuAdapter
+import com.example.neoregister.adapters.MenuCategoryAdapter
 import com.example.neoregister.adapters.PopularAdapter
 import com.example.neoregister.databinding.FragmentHomeBinding
+import com.example.neoregister.databinding.FragmentMenuChBinding
 import com.example.neoregister.models.MenuCard
 import com.example.neoregister.models.PopularCard
+import com.example.neoregister.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
 
-    private lateinit var binding :FragmentHomeBinding
-    private lateinit var popAdater : PopularAdapter
+    private val popAdater by lazy { PopularAdapter() }
+    private val mainViewModel by lazy { ViewModelProvider(this).get(MainViewModel::class.java) }
+    private var _binding: FragmentHomeBinding? = null
+    private val binding
+        get() = _binding!!
     private lateinit var menuAdapter: MenuAdapter
 
     override fun onCreateView(
@@ -30,7 +37,9 @@ class HomeFragment : Fragment() {
     ): View? {
 
         activity?.title = "Привет, Fatima"
-        binding = FragmentHomeBinding.inflate(layoutInflater)
+        _binding = FragmentHomeBinding.inflate(layoutInflater)
+
+        mainViewModel.getAllData()
 
         val popItems = mutableListOf<PopularCard>(
             PopularCard(1,"https://content.r9cdn.net/rimg/himg/51/74/1b/ostrovok-6965648-9bb831e1091d70ff2e60166a0db6b2880c095090-899355.jpg?width=335&height=268&crop=true", "Пончики", "90s"),
@@ -46,18 +55,20 @@ class HomeFragment : Fragment() {
             MenuCard(3, R.drawable.bakery, "Выпечка")
         )
 
-        popAdater = PopularAdapter(popItems)
         menuAdapter = MenuAdapter(menuItems)
 
+        _binding!!.popularItemsRecView.apply {
+            adapter=popAdater
+            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        }
 
-//        val layoutManager = LinearLayoutManager(view?.context)
-//        binding.popularItemsRecView.layoutManager = layoutManager
-        binding.popularItemsRecView.layoutManager =
-            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        mainViewModel.list.observe(viewLifecycleOwner){
+            popAdater.setList(it.data)
+        }
+
         binding.categoryItemRecView.layoutManager =
             GridLayoutManager(requireContext(), 2)
 
-        binding.popularItemsRecView.adapter = popAdater
         binding.categoryItemRecView.adapter = menuAdapter
 
         binding.menuTitle.setOnClickListener {
@@ -85,6 +96,11 @@ class HomeFragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

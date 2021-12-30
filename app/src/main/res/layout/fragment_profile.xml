@@ -39,7 +39,7 @@
                 android:layout_marginBottom="12dp"
                 android:fontFamily="@font/roboto"
                 android:gravity="center_horizontal"
-                android:text="Айдай"
+                android:text="Fatima"
                 android:textColor="@color/black"
                 android:textSize="24sp"
                 android:textStyle="bold" />
